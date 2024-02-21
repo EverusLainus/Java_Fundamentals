@@ -14,7 +14,7 @@ public class anagram {
                 map.put(c, 1);
             }
         }
-        for(int i=0; i<s2.length(); i++){
+        for(int i=0;  i<s2.length(); i++){
             c = s2.charAt(i);
             if(map.containsKey((c))){
                 int frequency = map.get(c);
@@ -31,6 +31,7 @@ public class anagram {
         }
         return flag;
     }
+    
     public static void main(String[] args){
         String str1 = "anne";
         String str2 = "enna";
