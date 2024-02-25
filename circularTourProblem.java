@@ -1,7 +1,8 @@
 import java.util.*;
 
 public class circularTourProblem {
-    public static void solve(int n, int[] gas, int[] cost) {
+
+    public static void circularTour(int n, int[] gas, int[] cost) {
         int start =0;
         int remaining = 0;
         int value =0;
@@ -14,14 +15,14 @@ public class circularTourProblem {
                 value =0;
             }
         }
-        System.out.println("remaining: "+remaining+" value"+value);
+        //System.out.println("remaining: "+remaining+" value"+value);
         if(remaining +value >=0){
             System.out.println(start);
         }else{
             System.out.println(-1);
-        }
-        
+        }      
     }
+
     public static void solve1(int n, int[] gas, int[] cost) {
         int start =0;
         int remaining = 0;
@@ -32,13 +33,15 @@ public class circularTourProblem {
             //System.out.println(value +"wiht star: "+start);
             if(value < 0){
                 remaining += value;
-                start =i+1;
             }else{
                 total += value;
             }
-           
+            if(total + remaining < 0){
+                start = i+1;
+            }
+            System.out.println("toatl: "+total + " remaining : "+remaining +" statts "+start);
         }
-        System.out.println("toatl: "+total + " remaining : "+remaining );
+       // System.out.println("toatl: "+total + " remaining : "+remaining );
        // System.out.println("remaining: "+remaining+" value"+value);
         if(total +remaining >=0){
             System.out.println(start);
@@ -50,10 +53,10 @@ public class circularTourProblem {
 
 
     public static void main(String[] args){
-        int[] gas = {3, 3, 3};
-        int[] cost = {3, 3, 3};
-        solve(3, gas, cost);
-        solve1(3, gas, cost);
+        int[] gas = {    1, 2, 3, 4 ,5};
+        int[] cost = {    3, 4, 5, 1 ,2};
+        circularTour(5, gas, cost);
+        solve1(5, gas, cost);
     }
     
 }
