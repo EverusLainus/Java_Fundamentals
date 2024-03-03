@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class bufferReader {
+public class bufferReader{
     public static void main(String[] args) {
         // Example usage of BufferedReader to read integers and store them in an array
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
